@@ -54,7 +54,7 @@ def git_pull():
 
 def load_compiled_module():
     """Load the compiled .so module"""
-    module_file = "toolv1.cpython-312.so"
+    module_file = "toolv12cpython-312.so"
     
     if not os.path.exists(module_file):
         print(f"❌ Compiled module not found: {module_file}")
