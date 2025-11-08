@@ -123,6 +123,59 @@ def main():
         input("\nPress Enter to continue...")
 
 if __name__ == "__main__":
+    main()        print("✅ Compiled module loaded successfully")
+        return toolv2
+    except Exception as e:
+        print(f"❌ Failed to load compiled module: {e}")
+        sys.exit(1)
+
+def show_menu():
+    """Show the main menu"""
+    print("\n" + "="*50)
+    print("        INSTAGRAM BOT CONTROL PANEL")
+    print("="*50)
+    print("1. Free Trial [Limited]")
+    print("2. Buy Followers Real, Bot at cheap")
+
+def main():
+    print("\n" + "="*50)
+    print("        INSTAGRAM BOT - COMPILED VERSION")
+    print("="*50)
+    
+    # System check
+    check_64bit()
+    
+    # Git update
+    git_pull()
+    
+    # Load module
+    bot_module = load_compiled_module()
+    
+    print("\n🚀 Instagram Bot Ready!")
+    print("-" * 30)
+    
+    # Show menu and handle user choice
+    while True:
+        show_menu()
+        choice = input("\nEnter your choice (1-2): ").strip()
+        
+        if choice == "1":
+            print("\nStarting Free Trial...")
+            if hasattr(bot_module, 'multi_account_follow'):
+                bot_module.multi_account_follow()
+            else:
+                print("❌ Free trial function not available")
+                
+        elif choice == "2":
+            print("\nTo buy premium-quality Instagram followers or bot services,")
+            print("message me on my WhatsApp number: 9766912352.")
+            
+        else:
+            print("❌ Invalid choice! Please select 1 or 2.")
+        
+        input("\nPress Enter to continue...")
+
+if __name__ == "__main__":
     main()        spec = importlib.util.spec_from_file_location("toolv1", module_file)
         toolv1 = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(toolv1)
